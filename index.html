@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 | Главная страница</title>
-    <!-- Шрифт как в регистрации -->
+    <title>CS2 HUB | Главная страница</title>
+    <!-- Шрифты и иконки -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -30,6 +29,7 @@
             padding: 20px;
         }
 
+        /* ШАПКА */
         header {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -48,7 +48,6 @@
 
         header:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: rgba(255, 215, 0, 0.3);
         }
 
@@ -59,7 +58,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 2px;
         }
 
         nav {
@@ -96,9 +94,19 @@
         .register-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            color: #1a1a2e !important;
         }
 
+        .user-greeting {
+            color: #ffd700;
+            font-weight: 600;
+            margin-left: 20px;
+            padding: 8px 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* HERO БЛОК */
         .hero {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -174,6 +182,7 @@
             box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
         }
 
+        /* КАРТОЧКИ */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -258,29 +267,54 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* СООБЩЕНИЕ О ПУСТЫХ КОММЕНТАРИЯХ */
-        .no-comments {
-            text-align: center;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.2);
+        .comment-list {
+            margin-bottom: 40px;
+        }
+
+        .comment-item {
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1px dashed rgba(255, 215, 0, 0.3);
-        }
-
-        .no-comments i {
-            font-size: 48px;
-            color: #ffd700;
+            padding: 20px;
             margin-bottom: 15px;
-            opacity: 0.5;
+            border-left: 3px solid #ffd700;
         }
 
-        .no-comments p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 18px;
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
-        /* ФОРМА ДОБАВЛЕНИЯ КОММЕНТАРИЯ */
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-left: auto;
+        }
+
+        .comment-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-left: 55px;
+        }
+
         .comment-form {
             margin-top: 30px;
             padding-top: 30px;
@@ -329,35 +363,28 @@
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
-        .login-message {
+        .no-comments {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
-            margin-top: 20px;
+            margin-bottom: 30px;
+            border: 1px dashed rgba(255, 215, 0, 0.3);
         }
 
-        .login-message p {
-            color: rgba(255, 255, 255, 0.7);
+        .no-comments i {
+            font-size: 48px;
+            color: #ffd700;
             margin-bottom: 15px;
+            opacity: 0.5;
         }
 
-        .login-message .login-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            color: #1a1a2e;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: 0.3s;
+        .no-comments p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
         }
 
-        .login-message .login-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-        }
-
+        /* ФУТЕР */
         footer {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -421,26 +448,27 @@
 </head>
 <body>
     <div class="wrapper">
+        <!-- ШАПКА -->
         <header>
             <h1>🎯 CS2 HUB</h1>
             <nav>
-                <!-- КНОПКА РЕГИСТРАЦИИ -->
-                <a href="https://hpr204.github.io/asdasdasd/" class="register-btn">Регистрация/Войти</a>
                 <a href="#">Новости</a>
-                <!-- КНОПКА ГАЙДОВ -->
                 <a href="https://hpr204.github.io/Gaidivcs2/">Гайды</a>
                 <a href="#">Скины</a>
-                <!-- КНОПКА ТУРНИРЫ -->
                 <a href="https://www.hltv.org/">Турниры</a>
+                <!-- Кнопка регистрации будет заменена скриптом -->
+                <span id="authSection"></span>
             </nav>
         </header>
 
+        <!-- HERO БЛОК -->
         <section class="hero">
             <h2>Counter-Strike 2</h2>
             <p>Добро пожаловать на главный портал по CS2! Свежие новости, гайды, обновления и всё о мире Counter-Strike 2.</p>
             <a href="https://hpr204.github.io/asdasdasd/" class="btn">Играть сейчас</a>
         </section>
 
+        <!-- КАРТОЧКИ -->
         <div class="cards">
             <div class="card">
                 <i class="fas fa-newspaper"></i>
@@ -468,34 +496,18 @@
             </div>
         </div>
 
-        <!-- БЛОК КОММЕНТАРИЕВ (БЕЗ НЕНАСТОЯЩИХ КОММОВ) -->
-        <section class="comments-section">
+        <!-- БЛОК КОММЕНТАРИЕВ -->
+        <section class="comments-section" id="commentsSection">
             <h2>Комментарии сообщества</h2>
-            
-            <!-- СООБЩЕНИЕ, ЧТО КОММЕНТАРИЕВ ПОКА НЕТ -->
-            <div class="no-comments">
-                <i class="far fa-comment-dots"></i>
-                <p>Пока нет комментариев. Будьте первым!</p>
-            </div>
-
-            <!-- ФОРМА ДОБАВЛЕНИЯ КОММЕНТАРИЯ -->
-            <div class="comment-form">
-                <h3>Оставить комментарий</h3>
-                <textarea id="commentText" placeholder="Напишите ваш комментарий... (только для зарегистрированных)"></textarea>
-                <button onclick="addComment()">
-                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Отправить
-                </button>
-                
-                <!-- Сообщение для незарегистрированных -->
-                <div class="login-message" id="loginMessage">
-                    <p>✏️ Чтобы оставить комментарий, нужно войти или зарегистрироваться</p>
-                    <a href="https://hpr204.github.io/asdasdasd/" class="login-btn">
-                        <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Войти / Регистрация
-                    </a>
+            <div id="commentsContainer">
+                <div class="no-comments">
+                    <i class="far fa-comment-dots"></i>
+                    <p>Загрузка комментариев...</p>
                 </div>
             </div>
         </section>
 
+        <!-- ФУТЕР -->
         <footer>
             <p>© 2026 CS2 HUB. Все права защищены. Counter-Strike 2 — товарный знак Valve Corporation.</p>
             <div class="social-links">
@@ -508,45 +520,135 @@
         </footer>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
     <script>
-        // Функция для проверки, зарегистрирован ли пользователь
-        function isUserLoggedIn() {
-            // В демо-версии всегда false (никто не залогинен)
-            // В реальном проекте здесь будет проверка сессии
-            return false;
+        // 🔥 ВСТАВЬТЕ СВОЙ КОНФИГ ИЗ FIREBASE
+        const firebaseConfig = {
+            apiKey: "ВАШ_API_KEY",
+            authDomain: "ВАШ_AUTH_DOMAIN",
+            projectId: "ВАШ_PROJECT_ID",
+            storageBucket: "ВАШ_STORAGE_BUCKET",
+            messagingSenderId: "ВАШ_MESSAGING_SENDER_ID",
+            appId: "ВАШ_APP_ID"
+        };
+
+        // Инициализация Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Текущий пользователь
+        let currentUser = localStorage.getItem('cs2hub_user');
+
+        // Обновление шапки
+        function updateHeader() {
+            const authSection = document.getElementById('authSection');
+            if (currentUser) {
+                authSection.innerHTML = `<span class="user-greeting">👋 ${currentUser}</span>`;
+            } else {
+                authSection.innerHTML = `<a href="register.html" class="register-btn">Регистрация/Войти</a>`;
+            }
         }
 
-        // Функция добавления комментария
-        function addComment() {
-            const commentText = document.getElementById('commentText').value.trim();
+        // Загрузка комментариев
+        async function loadComments() {
+            const commentsContainer = document.getElementById('commentsContainer');
             
-            if (!commentText) {
+            try {
+                const snapshot = await db.collection('comments')
+                    .orderBy('createdAt', 'desc')
+                    .get();
+
+                if (snapshot.empty) {
+                    commentsContainer.innerHTML = `
+                        <div class="no-comments">
+                            <i class="far fa-comment-dots"></i>
+                            <p>Пока нет комментариев. Будьте первым!</p>
+                        </div>
+                    `;
+                } else {
+                    let commentsHtml = '<div class="comment-list">';
+                    snapshot.forEach(doc => {
+                        const comment = doc.data();
+                        const date = comment.createdAt?.toDate() || new Date();
+                        commentsHtml += `
+                            <div class="comment-item">
+                                <div class="comment-header">
+                                    <div class="comment-avatar">${comment.author.charAt(0)}</div>
+                                    <span class="comment-author">${comment.author}</span>
+                                    <span class="comment-date">${date.toLocaleString('ru-RU')}</span>
+                                </div>
+                                <div class="comment-text">${comment.text}</div>
+                            </div>
+                        `;
+                    });
+                    commentsHtml += '</div>';
+                    
+                    // Форма для нового комментария (только для зарегистрированных)
+                    if (currentUser) {
+                        commentsHtml += `
+                            <div class="comment-form">
+                                <h3>Оставить комментарий</h3>
+                                <textarea id="newComment" placeholder="Ваш комментарий..."></textarea>
+                                <button onclick="addComment()">Отправить</button>
+                            </div>
+                        `;
+                    }
+                    
+                    commentsContainer.innerHTML = commentsHtml;
+                }
+            } catch (error) {
+                commentsContainer.innerHTML = `
+                    <div class="no-comments">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Ошибка загрузки: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Добавление комментария
+        window.addComment = async function() {
+            if (!currentUser) {
+                alert('Сначала войдите в систему!');
+                window.location.href = 'register.html';
+                return;
+            }
+
+            const text = document.getElementById('newComment').value.trim();
+            if (!text) {
                 alert('Напишите комментарий!');
                 return;
             }
 
-            if (!isUserLoggedIn()) {
-                alert('❌ Только зарегистрированные пользователи могут оставлять комментарии!');
-                window.location.href = 'https://hpr204.github.io/asdasdasd/';
-                return;
+            try {
+                await db.collection('comments').add({
+                    author: currentUser,
+                    text: text,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                
+                document.getElementById('newComment').value = '';
+                loadComments(); // Перезагружаем комментарии
+            } catch (error) {
+                alert('Ошибка: ' + error.message);
             }
+        };
 
-            alert('✅ Комментарий отправлен! (В реальном проекте он появится после проверки)');
-            document.getElementById('commentText').value = '';
-        }
-
-        // Обновляем отображение в зависимости от статуса
-        function updateUI() {
-            const loginMessage = document.getElementById('loginMessage');
-            
-            if (isUserLoggedIn()) {
-                loginMessage.style.display = 'none';
-            } else {
-                loginMessage.style.display = 'block';
+        // Слушаем изменения в localStorage (на случай, если пользователь залогинился в другой вкладке)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'cs2hub_user') {
+                currentUser = e.newValue;
+                updateHeader();
+                loadComments();
             }
-        }
+        });
 
-        updateUI();
+        // Запуск
+        updateHeader();
+        loadComments();
     </script>
 </body>
 </html>
