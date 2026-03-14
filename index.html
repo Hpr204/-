@@ -24,14 +24,12 @@
             color: #fff;
         }
 
-        /* Центрирующий контейнер */
         .wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* ШАПКА - как карточка из регистрации, но в тёмном стиле CS2 */
         header {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -68,6 +66,7 @@
             display: flex;
             gap: 25px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         nav a {
@@ -84,7 +83,6 @@
             opacity: 1;
         }
 
-        /* Специальный стиль для кнопки регистрации (выделяется) */
         .register-btn {
             background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
             color: #1a1a2e !important;
@@ -101,7 +99,6 @@
             color: #1a1a2e !important;
         }
 
-        /* HERO-БЛОК (приветствие CS2) */
         .hero {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -154,7 +151,6 @@
             line-height: 1.6;
         }
 
-        /* Кнопка в стиле CS2 */
         .hero .btn {
             display: inline-block;
             padding: 16px 50px;
@@ -178,7 +174,6 @@
             box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
         }
 
-        /* СЕТКА С КАРТОЧКАМИ */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,6 +228,8 @@
             font-weight: 600;
             transition: 0.3s;
             box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
         .card .card-btn:hover {
@@ -241,7 +238,6 @@
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
-        /* СЕКЦИЯ С НОВОСТЯМИ */
         .news-section {
             margin: 50px 0;
         }
@@ -292,7 +288,6 @@
             line-height: 1.5;
         }
 
-        /* ФУТЕР */
         footer {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -332,7 +327,6 @@
             transform: translateY(-3px);
         }
 
-        /* АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ */
         @media (max-width: 700px) {
             header {
                 flex-direction: column;
@@ -357,59 +351,56 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- ШАПКА САЙТА CS2 -->
         <header>
             <h1>🎯 CS2 HUB</h1>
             <nav>
-                <a href="#" class="register-btn" onclick="window.location.href='https://hpr204.github.io/asdasdasd/'">Регистрация/Войти</a>
+                <!-- КНОПКА РЕГИСТРАЦИИ -->
+                <a href="https://hpr204.github.io/asdasdasd/" class="register-btn">Регистрация/Войти</a>
                 <a href="#">Новости</a>
-                <!-- Обновлённая ссылка на Гайды -->
-                <a href="#" onclick="window.location.href='https://hpr204.github.io/Gaidivcs2/'">Гайды</a>
+                <!-- КНОПКА ГАЙДОВ -->
+                <a href="https://hpr204.github.io/Gaidivcs2/">Гайды</a>
                 <a href="#">Скины</a>
-                <a href="#">Турниры</a>
+                <!-- КНОПКА ТУРНИРЫ С ССЫЛКОЙ НА HLTV -->
+                <a href="https://www.hltv.org/">Турниры</a>
             </nav>
         </header>
 
-        <!-- ГЛАВНЫЙ ЭКРАН CS2 -->
         <section class="hero">
             <h2>Counter-Strike 2</h2>
             <p>Добро пожаловать на главный портал по CS2! Свежие новости, гайды, обновления и всё о мире Counter-Strike 2.</p>
-            <a href="#" class="btn" onclick="window.location.href='https://hpr204.github.io/asdasdasd/'">Играть сейчас</a>
+            <!-- КНОПКА "ИГРАТЬ СЕЙЧАС" (ведёт на регистрацию) -->
+            <a href="https://hpr204.github.io/asdasdasd/" class="btn">Играть сейчас</a>
         </section>
 
-        <!-- КАРТОЧКИ С ОСНОВНЫМИ РАЗДЕЛАМИ -->
         <div class="cards">
-            <!-- Карточка "Новости" -->
             <div class="card">
                 <i class="fas fa-newspaper"></i>
                 <h3>Новости</h3>
                 <p>Все последние обновления, патчи и события в мире CS2. Будьте в курсе!</p>
                 <a href="#" class="card-btn">Читать новости</a>
             </div>
-            <!-- Карточка "Гайды" с ссылкой -->
             <div class="card">
                 <i class="fas fa-book-open"></i>
                 <h3>Гайды</h3>
                 <p>Обучение для новичков, тактики, советы по стрельбе и стратегии от профи.</p>
-                <a href="#" class="card-btn" onclick="window.location.href='https://hpr204.github.io/Gaidivcs2/'">Изучить гайды</a>
+                <!-- КНОПКА В КАРТОЧКЕ ГАЙДОВ -->
+                <a href="https://hpr204.github.io/Gaidivcs2/" class="card-btn">Изучить гайды</a>
             </div>
-            <!-- Карточка "Скины" -->
             <div class="card">
                 <i class="fas fa-gun"></i>
                 <h3>Скины</h3>
                 <p>Коллекции скинов, кейсы, цены и трейдинг. Всё о внешнем виде оружия.</p>
                 <a href="#" class="card-btn">Смотреть скины</a>
             </div>
-            <!-- Карточка "Турниры" -->
             <div class="card">
                 <i class="fas fa-trophy"></i>
                 <h3>Турниры</h3>
                 <p>Расписание матчей, результаты команд и последние новости киберспорта.</p>
-                <a href="#" class="card-btn">К турнирам</a>
+                <!-- КНОПКА В КАРТОЧКЕ ТУРНИРОВ С ССЫЛКОЙ НА HLTV -->
+                <a href="https://www.hltv.org/" class="card-btn">К турнирам</a>
             </div>
         </div>
 
-        <!-- БЛОК С ПОСЛЕДНИМИ НОВОСТЯМИ -->
         <section class="news-section">
             <h2>Последние новости CS2</h2>
             <div class="news-grid">
@@ -431,7 +422,6 @@
             </div>
         </section>
 
-        <!-- ПОДВАЛ -->
         <footer>
             <p>© 2026 CS2 HUB. Все права защищены. Counter-Strike 2 — товарный знак Valve Corporation.</p>
             <div class="social-links">
@@ -443,38 +433,5 @@
             </div>
         </footer>
     </div>
-
-    <!-- Небольшой скрипт для обработки кликов -->
-    <script>
-        // Функция для перенаправления на сайт регистрации
-        function goToRegistration() {
-            window.location.href = 'https://hpr204.github.io/asdasdasd/';
-        }
-
-        // Функция для перенаправления на сайт с гайдами
-        function goToGuides() {
-            window.location.href = 'https://hpr204.github.io/Gaidivcs2/';
-        }
-
-        // Назначаем обработчики на кнопки регистрации
-        document.querySelectorAll('.register-btn, .hero .btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                goToRegistration();
-            });
-        });
-
-        // Назначаем обработчик на кнопку "Гайды" в меню
-        document.querySelector('nav a[onclick*="Gaidivcs2"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            goToGuides();
-        });
-
-        // Назначаем обработчик на кнопку "Изучить гайды" в карточке
-        document.querySelector('.card .card-btn[onclick*="Gaidivcs2"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            goToGuides();
-        });
-    </script>
 </body>
 </html>
