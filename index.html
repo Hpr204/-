@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 | Главная страница</title>
+    <!-- Шрифт как в регистрации -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Центрирующий контейнер */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ШАПКА - как карточка из регистрации, но в тёмном стиле CS2 */
+        header {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 20px 35px;
+            margin: 20px 0 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            opacity: 1;
+        }
+
+        /* Специальный стиль для кнопки регистрации (выделяется) */
+        .register-btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+            transition: 0.3s !important;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            color: #1a1a2e !important;
+        }
+
+        /* HERO-БЛОК (приветствие CS2) */
+        .hero {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            padding: 80px 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.hdqwalls.com/download/counter-strike-2-2023-4k-8g-1920x1080.jpg') center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* Кнопка в стиле CS2 */
+        .hero .btn {
+            display: inline-block;
+            padding: 16px 50px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* СЕТКА С КАРТОЧКАМИ */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .card i {
+            font-size: 48px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .card .card-btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .card .card-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* СЕКЦИЯ С НОВОСТЯМИ */
+        .news-section {
+            margin: 50px 0;
+        }
+
+        .news-section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+
+        .news-item .date {
+            color: #ffd700;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .news-item h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .news-item p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        /* ФУТЕР */
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        footer:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+            transform: translateY(-3px);
+        }
+
+        /* АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 40px;
+                letter-spacing: 2px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .hero .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- ШАПКА САЙТА CS2 -->
+        <header>
+            <h1>🎯 CS2 HUB</h1>
+            <nav>
+                <!-- Убрали "Главная", добавили "Регистрация/Войти" с ссылкой -->
+                <a href="#" class="register-btn" onclick="window.location.href='https://hpr204.github.io/asdasdasd/'">Регистрация/Войти</a>
+                <a href="#">Новости</a>
+                <a href="#">Гайды</a>
+                <a href="#">Скины</a>
+                <a href="#">Турниры</a>
+            </nav>
+        </header>
+
+        <!-- ГЛАВНЫЙ ЭКРАН CS2 -->
+        <section class="hero">
+            <h2>Counter-Strike 2</h2>
+            <p>Добро пожаловать на главный портал по CS2! Свежие новости, гайды, обновления и всё о мире Counter-Strike 2.</p>
+            <a href="#" class="btn" onclick="window.location.href='https://hpr204.github.io/asdasdasd/'">Играть сейчас</a>
+        </section>
+
+        <!-- КАРТОЧКИ С ОСНОВНЫМИ РАЗДЕЛАМИ -->
+        <div class="cards">
+            <!-- Карточка "Новости" -->
+            <div class="card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Новости</h3>
+                <p>Все последние обновления, патчи и события в мире CS2. Будьте в курсе!</p>
+                <a href="#" class="card-btn">Читать новости</a>
+            </div>
+            <!-- Карточка "Гайды" -->
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>Гайды</h3>
+                <p>Обучение для новичков, тактики, советы по стрельбе и стратегии от профи.</p>
+                <a href="#" class="card-btn">Изучить гайды</a>
+            </div>
+            <!-- Карточка "Скины" -->
+            <div class="card">
+                <i class="fas fa-gun"></i>
+                <h3>Скины</h3>
+                <p>Коллекции скинов, кейсы, цены и трейдинг. Всё о внешнем виде оружия.</p>
+                <a href="#" class="card-btn">Смотреть скины</a>
+            </div>
+            <!-- Карточка "Турниры" -->
+            <div class="card">
+                <i class="fas fa-trophy"></i>
+                <h3>Турниры</h3>
+                <p>Расписание матчей, результаты команд и последние новости киберспорта.</p>
+                <a href="#" class="card-btn">К турнирам</a>
+            </div>
+        </div>
+
+        <!-- БЛОК С ПОСЛЕДНИМИ НОВОСТЯМИ -->
+        <section class="news-section">
+            <h2>Последние новости CS2</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="date">14 марта 2026</span>
+                    <h3>Выход нового патча 2.0</h3>
+                    <p>Исправлены баги, улучшена оптимизация и добавлена новая карта.</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">13 марта 2026</span>
+                    <h3>Майджор в Москве</h3>
+                    <p>Объявлены даты проведения крупнейшего турнира года.</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">12 марта 2026</span>
+                    <h3>Новая коллекция скинов</h3>
+                    <p>В игру добавлены 20 новых скинов для оружия.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОДВАЛ -->
+        <footer>
+            <p>© 2026 CS2 HUB. Все права защищены. Counter-Strike 2 — товарный знак Valve Corporation.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitch"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Небольшой скрипт для обработки кликов -->
+    <script>
+        // Функция для перенаправления на сайт регистрации
+        function goToRegistration() {
+            window.location.href = 'https://hpr204.github.io/asdasdasd/';
+        }
+
+        // Назначаем обработчики на все кнопки, которые должны вести на регистрацию
+        document.querySelectorAll('.register-btn, .hero .btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                goToRegistration();
+            });
+        });
+    </script>
+</body>
+</html>
