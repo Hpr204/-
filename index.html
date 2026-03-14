@@ -238,11 +238,18 @@
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
-        .news-section {
+        /* БЛОК КОММЕНТАРИЕВ */
+        .comments-section {
             margin: 50px 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .news-section h2 {
+        .comments-section h2 {
             font-size: 36px;
             text-align: center;
             margin-bottom: 30px;
@@ -251,41 +258,104 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .news-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* СООБЩЕНИЕ О ПУСТЫХ КОММЕНТАРИЯХ */
+        .no-comments {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
-            padding: 20px;
-            transition: 0.3s;
+            margin-bottom: 30px;
+            border: 1px dashed rgba(255, 215, 0, 0.3);
         }
 
-        .news-item:hover {
-            transform: translateY(-5px);
+        .no-comments i {
+            font-size: 48px;
+            color: #ffd700;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .no-comments p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
+        }
+
+        /* ФОРМА ДОБАВЛЕНИЯ КОММЕНТАРИЯ */
+        .comment-form {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .comment-form h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .comment-form textarea:focus {
+            outline: none;
             border-color: #ffd700;
         }
 
-        .news-item .date {
-            color: #ffd700;
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: block;
+        .comment-form button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
         }
 
-        .news-item h3 {
-            color: #fff;
-            margin-bottom: 10px;
+        .comment-form button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
-        .news-item p {
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
+        .login-message {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .login-message p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .login-message .login-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .login-message .login-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
         footer {
@@ -360,7 +430,7 @@
                 <!-- КНОПКА ГАЙДОВ -->
                 <a href="https://hpr204.github.io/Gaidivcs2/">Гайды</a>
                 <a href="#">Скины</a>
-                <!-- КНОПКА ТУРНИРЫ С ССЫЛКОЙ НА HLTV -->
+                <!-- КНОПКА ТУРНИРЫ -->
                 <a href="https://www.hltv.org/">Турниры</a>
             </nav>
         </header>
@@ -368,7 +438,6 @@
         <section class="hero">
             <h2>Counter-Strike 2</h2>
             <p>Добро пожаловать на главный портал по CS2! Свежие новости, гайды, обновления и всё о мире Counter-Strike 2.</p>
-            <!-- КНОПКА "ИГРАТЬ СЕЙЧАС" (ведёт на регистрацию) -->
             <a href="https://hpr204.github.io/asdasdasd/" class="btn">Играть сейчас</a>
         </section>
 
@@ -383,7 +452,6 @@
                 <i class="fas fa-book-open"></i>
                 <h3>Гайды</h3>
                 <p>Обучение для новичков, тактики, советы по стрельбе и стратегии от профи.</p>
-                <!-- КНОПКА В КАРТОЧКЕ ГАЙДОВ -->
                 <a href="https://hpr204.github.io/Gaidivcs2/" class="card-btn">Изучить гайды</a>
             </div>
             <div class="card">
@@ -396,28 +464,34 @@
                 <i class="fas fa-trophy"></i>
                 <h3>Турниры</h3>
                 <p>Расписание матчей, результаты команд и последние новости киберспорта.</p>
-                <!-- КНОПКА В КАРТОЧКЕ ТУРНИРОВ С ССЫЛКОЙ НА HLTV -->
                 <a href="https://www.hltv.org/" class="card-btn">К турнирам</a>
             </div>
         </div>
 
-        <section class="news-section">
-            <h2>Последние новости CS2</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <span class="date">14 марта 2026</span>
-                    <h3>Выход нового патча 2.0</h3>
-                    <p>Исправлены баги, улучшена оптимизация и добавлена новая карта.</p>
-                </div>
-                <div class="news-item">
-                    <span class="date">13 марта 2026</span>
-                    <h3>Майджор в Москве</h3>
-                    <p>Объявлены даты проведения крупнейшего турнира года.</p>
-                </div>
-                <div class="news-item">
-                    <span class="date">12 марта 2026</span>
-                    <h3>Новая коллекция скинов</h3>
-                    <p>В игру добавлены 20 новых скинов для оружия.</p>
+        <!-- БЛОК КОММЕНТАРИЕВ (БЕЗ НЕНАСТОЯЩИХ КОММОВ) -->
+        <section class="comments-section">
+            <h2>Комментарии сообщества</h2>
+            
+            <!-- СООБЩЕНИЕ, ЧТО КОММЕНТАРИЕВ ПОКА НЕТ -->
+            <div class="no-comments">
+                <i class="far fa-comment-dots"></i>
+                <p>Пока нет комментариев. Будьте первым!</p>
+            </div>
+
+            <!-- ФОРМА ДОБАВЛЕНИЯ КОММЕНТАРИЯ -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <textarea id="commentText" placeholder="Напишите ваш комментарий... (только для зарегистрированных)"></textarea>
+                <button onclick="addComment()">
+                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Отправить
+                </button>
+                
+                <!-- Сообщение для незарегистрированных -->
+                <div class="login-message" id="loginMessage">
+                    <p>✏️ Чтобы оставить комментарий, нужно войти или зарегистрироваться</p>
+                    <a href="https://hpr204.github.io/asdasdasd/" class="login-btn">
+                        <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>Войти / Регистрация
+                    </a>
                 </div>
             </div>
         </section>
@@ -433,5 +507,46 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        // Функция для проверки, зарегистрирован ли пользователь
+        function isUserLoggedIn() {
+            // В демо-версии всегда false (никто не залогинен)
+            // В реальном проекте здесь будет проверка сессии
+            return false;
+        }
+
+        // Функция добавления комментария
+        function addComment() {
+            const commentText = document.getElementById('commentText').value.trim();
+            
+            if (!commentText) {
+                alert('Напишите комментарий!');
+                return;
+            }
+
+            if (!isUserLoggedIn()) {
+                alert('❌ Только зарегистрированные пользователи могут оставлять комментарии!');
+                window.location.href = 'https://hpr204.github.io/asdasdasd/';
+                return;
+            }
+
+            alert('✅ Комментарий отправлен! (В реальном проекте он появится после проверки)');
+            document.getElementById('commentText').value = '';
+        }
+
+        // Обновляем отображение в зависимости от статуса
+        function updateUI() {
+            const loginMessage = document.getElementById('loginMessage');
+            
+            if (isUserLoggedIn()) {
+                loginMessage.style.display = 'none';
+            } else {
+                loginMessage.style.display = 'block';
+            }
+        }
+
+        updateUI();
+    </script>
 </body>
 </html>
