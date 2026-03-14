@@ -3,652 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 HUB | Главная страница</title>
-    <!-- Шрифты и иконки -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>CS2 HUB</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
         }
-
         .wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
-        /* ШАПКА */
         header {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            padding: 20px 35px;
-            margin: 20px 0 30px 0;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        header:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-
-        header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-            opacity: 1;
-        }
-
-        .register-btn {
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            color: #1a1a2e !important;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700 !important;
-            opacity: 1 !important;
-            transition: 0.3s !important;
-        }
-
-        .register-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .user-greeting {
-            color: #ffd700;
-            font-weight: 600;
-            margin-left: 20px;
-            padding: 8px 15px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        /* HERO БЛОК */
-        .hero {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            padding: 80px 40px;
-            text-align: center;
             margin-bottom: 30px;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.hdqwalls.com/download/counter-strike-2-2023-4k-8g-1920x1080.jpg') center/cover;
-            opacity: 0.1;
-            z-index: -1;
+        h1 {
+            color: #ffd700;
         }
-
-        .hero:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-
-        .hero h2 {
-            font-size: 64px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .hero .btn {
-            display: inline-block;
-            padding: 16px 50px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            color: #1a1a2e;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
+        nav a {
+            color: white;
             text-decoration: none;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-left: 20px;
         }
-
-        .hero .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+        .user-info {
+            color: #ffd700;
         }
-
-        /* КАРТОЧКИ */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .hero h2 {
+            font-size: 48px;
+            color: #ffd700;
+        }
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin: 30px 0;
         }
-
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 35px 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-
-        .card i {
-            font-size: 48px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .card p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .card .card-btn {
-            display: inline-block;
-            padding: 10px 30px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            color: #1a1a2e;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
-            border: none;
-            cursor: pointer;
-        }
-
-        .card .card-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        /* БЛОК КОММЕНТАРИЕВ */
-        .comments-section {
-            margin: 50px 0;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .comments-section h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .comment-list {
-            margin-bottom: 40px;
-        }
-
-        .comment-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 3px solid #ffd700;
-        }
-
-        .comment-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .comment-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #1a1a2e;
-        }
-
-        .comment-author {
-            font-weight: 600;
-            color: #ffd700;
-        }
-
-        .comment-date {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-left: auto;
-        }
-
-        .comment-text {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-left: 55px;
-        }
-
-        .comment-form {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .comment-form h3 {
-            color: #ffd700;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .comment-form textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 15px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            margin-bottom: 15px;
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #ffd700;
-        }
-
-        .comment-form button {
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-            color: #1a1a2e;
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        .comment-form button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .no-comments {
-            text-align: center;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1px dashed rgba(255, 215, 0, 0.3);
-        }
-
-        .no-comments i {
-            font-size: 48px;
-            color: #ffd700;
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-
-        .no-comments p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 18px;
-        }
-
-        /* ФУТЕР */
-        footer {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
             padding: 30px;
-            margin-top: 40px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
         }
-
-        footer:hover {
-            transform: translateY(-3px);
-            border-color: rgba(255, 215, 0, 0.3);
+        .comment-section {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
         }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 15px;
+        .comment {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
         }
-
-        .social-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .social-links a {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 22px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
+        .comment-author {
             color: #ffd700;
-            transform: translateY(-3px);
+            font-weight: bold;
         }
-
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero h2 {
-                font-size: 40px;
-                letter-spacing: 2px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .hero .btn {
-                padding: 14px 30px;
-                font-size: 16px;
-            }
+        .comment-date {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #0f3460;
+            border: 1px solid #ffd700;
+            color: white;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #ffd700;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .register-link {
+            background: #ffd700;
+            color: #1a1a2e !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .register-link:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- ШАПКА -->
         <header>
             <h1>🎯 CS2 HUB</h1>
             <nav>
                 <a href="#">Новости</a>
-                <a href="https://hpr204.github.io/Gaidivcs2/">Гайды</a>
+                <a href="#">Гайды</a>
                 <a href="#">Скины</a>
-                <a href="https://www.hltv.org/">Турниры</a>
-                <!-- Кнопка регистрации будет заменена скриптом -->
-                <span id="authSection"></span>
+                <a href="#">Турниры</a>
+                <span id="userDisplay" class="user-info"></span>
             </nav>
         </header>
 
-        <!-- HERO БЛОК -->
-        <section class="hero">
+        <div class="hero">
             <h2>Counter-Strike 2</h2>
-            <p>Добро пожаловать на главный портал по CS2! Свежие новости, гайды, обновления и всё о мире Counter-Strike 2.</p>
-            <a href="https://hpr204.github.io/asdasdasd/" class="btn">Играть сейчас</a>
-        </section>
+            <p>Добро пожаловать на главный портал по CS2!</p>
+        </div>
 
-        <!-- КАРТОЧКИ -->
         <div class="cards">
-            <div class="card">
-                <i class="fas fa-newspaper"></i>
-                <h3>Новости</h3>
-                <p>Все последние обновления, патчи и события в мире CS2. Будьте в курсе!</p>
-                <a href="#" class="card-btn">Читать новости</a>
+            <div class="card">🔥 Новости CS2</div>
+            <div class="card">📚 Гайды</div>
+            <div class="card">🔫 Скины</div>
+            <div class="card">🏆 Турниры</div>
+        </div>
+
+        <div class="comment-section">
+            <h2 style="color: #ffd700; margin-bottom: 20px;">Комментарии</h2>
+            
+            <div id="commentsList">
+                <!-- Комментарии будут загружаться сюда -->
             </div>
-            <div class="card">
-                <i class="fas fa-book-open"></i>
-                <h3>Гайды</h3>
-                <p>Обучение для новичков, тактики, советы по стрельбе и стратегии от профи.</p>
-                <a href="https://hpr204.github.io/Gaidivcs2/" class="card-btn">Изучить гайды</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-gun"></i>
-                <h3>Скины</h3>
-                <p>Коллекции скинов, кейсы, цены и трейдинг. Всё о внешнем виде оружия.</p>
-                <a href="#" class="card-btn">Смотреть скины</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-trophy"></i>
-                <h3>Турниры</h3>
-                <p>Расписание матчей, результаты команд и последние новости киберспорта.</p>
-                <a href="https://www.hltv.org/" class="card-btn">К турнирам</a>
+
+            <div id="commentForm" style="display: none;">
+                <h3>Оставить комментарий</h3>
+                <textarea id="commentText" placeholder="Ваш комментарий..." rows="3"></textarea>
+                <button onclick="addComment()">Отправить</button>
             </div>
         </div>
 
-        <!-- БЛОК КОММЕНТАРИЕВ -->
-        <section class="comments-section" id="commentsSection">
-            <h2>Комментарии сообщества</h2>
-            <div id="commentsContainer">
-                <div class="no-comments">
-                    <i class="far fa-comment-dots"></i>
-                    <p>Загрузка комментариев...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ФУТЕР -->
         <footer>
-            <p>© 2026 CS2 HUB. Все права защищены. Counter-Strike 2 — товарный знак Valve Corporation.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-twitch"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-steam"></i></a>
-            </div>
+            © 2026 CS2 HUB
         </footer>
     </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-
     <script>
-        // 🔥 ВСТАВЬТЕ СВОЙ КОНФИГ ИЗ FIREBASE
-        const firebaseConfig = {
-            apiKey: "ВАШ_API_KEY",
-            authDomain: "ВАШ_AUTH_DOMAIN",
-            projectId: "ВАШ_PROJECT_ID",
-            storageBucket: "ВАШ_STORAGE_BUCKET",
-            messagingSenderId: "ВАШ_MESSAGING_SENDER_ID",
-            appId: "ВАШ_APP_ID"
-        };
+        // Проверяем, залогинен ли пользователь
+        const currentUser = localStorage.getItem('cs2user');
+        
+        // Показываем имя пользователя или кнопку регистрации
+        const userDisplay = document.getElementById('userDisplay');
+        if (currentUser) {
+            userDisplay.innerHTML = `👋 ${currentUser}`;
+            document.getElementById('commentForm').style.display = 'block';
+        } else {
+            // ИСПРАВЛЕННАЯ ССЫЛКА НА РЕГИСТРАЦИЮ
+            userDisplay.innerHTML = '<a href="https://hpr204.github.io/registrycshubcs2/" class="register-link">Регистрация</a>';
+        }
 
-        // Инициализация Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+        // Загружаем комментарии из localStorage (для простоты)
+        let comments = JSON.parse(localStorage.getItem('comments')) || [];
 
-        // Текущий пользователь
-        let currentUser = localStorage.getItem('cs2hub_user');
-
-        // Обновление шапки
-        function updateHeader() {
-            const authSection = document.getElementById('authSection');
-            if (currentUser) {
-                authSection.innerHTML = `<span class="user-greeting">👋 ${currentUser}</span>`;
+        function showComments() {
+            const list = document.getElementById('commentsList');
+            if (comments.length === 0) {
+                list.innerHTML = '<p style="color:#888;">Пока нет комментариев</p>';
             } else {
-                authSection.innerHTML = `<a href="register.html" class="register-btn">Регистрация/Войти</a>`;
-            }
-        }
-
-        // Загрузка комментариев
-        async function loadComments() {
-            const commentsContainer = document.getElementById('commentsContainer');
-            
-            try {
-                const snapshot = await db.collection('comments')
-                    .orderBy('createdAt', 'desc')
-                    .get();
-
-                if (snapshot.empty) {
-                    commentsContainer.innerHTML = `
-                        <div class="no-comments">
-                            <i class="far fa-comment-dots"></i>
-                            <p>Пока нет комментариев. Будьте первым!</p>
-                        </div>
-                    `;
-                } else {
-                    let commentsHtml = '<div class="comment-list">';
-                    snapshot.forEach(doc => {
-                        const comment = doc.data();
-                        const date = comment.createdAt?.toDate() || new Date();
-                        commentsHtml += `
-                            <div class="comment-item">
-                                <div class="comment-header">
-                                    <div class="comment-avatar">${comment.author.charAt(0)}</div>
-                                    <span class="comment-author">${comment.author}</span>
-                                    <span class="comment-date">${date.toLocaleString('ru-RU')}</span>
-                                </div>
-                                <div class="comment-text">${comment.text}</div>
-                            </div>
-                        `;
-                    });
-                    commentsHtml += '</div>';
-                    
-                    // Форма для нового комментария (только для зарегистрированных)
-                    if (currentUser) {
-                        commentsHtml += `
-                            <div class="comment-form">
-                                <h3>Оставить комментарий</h3>
-                                <textarea id="newComment" placeholder="Ваш комментарий..."></textarea>
-                                <button onclick="addComment()">Отправить</button>
-                            </div>
-                        `;
-                    }
-                    
-                    commentsContainer.innerHTML = commentsHtml;
-                }
-            } catch (error) {
-                commentsContainer.innerHTML = `
-                    <div class="no-comments">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <p>Ошибка загрузки: ${error.message}</p>
+                list.innerHTML = comments.map(comment => `
+                    <div class="comment">
+                        <span class="comment-author">${comment.author}</span>
+                        <span class="comment-date">${comment.date}</span>
+                        <p>${comment.text}</p>
                     </div>
-                `;
+                `).join('');
             }
         }
 
-        // Добавление комментария
-        window.addComment = async function() {
-            if (!currentUser) {
-                alert('Сначала войдите в систему!');
-                window.location.href = 'register.html';
-                return;
-            }
+        function addComment() {
+            const text = document.getElementById('commentText').value.trim();
+            if (!text) return alert('Напишите комментарий!');
 
-            const text = document.getElementById('newComment').value.trim();
-            if (!text) {
-                alert('Напишите комментарий!');
-                return;
-            }
+            comments.unshift({
+                author: currentUser,
+                text: text,
+                date: new Date().toLocaleString()
+            });
 
-            try {
-                await db.collection('comments').add({
-                    author: currentUser,
-                    text: text,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-                
-                document.getElementById('newComment').value = '';
-                loadComments(); // Перезагружаем комментарии
-            } catch (error) {
-                alert('Ошибка: ' + error.message);
-            }
-        };
+            localStorage.setItem('comments', JSON.stringify(comments));
+            document.getElementById('commentText').value = '';
+            showComments();
+        }
 
-        // Слушаем изменения в localStorage (на случай, если пользователь залогинился в другой вкладке)
-        window.addEventListener('storage', (e) => {
-            if (e.key === 'cs2hub_user') {
-                currentUser = e.newValue;
-                updateHeader();
-                loadComments();
-            }
-        });
-
-        // Запуск
-        updateHeader();
-        loadComments();
+        showComments();
     </script>
 </body>
 </html>
