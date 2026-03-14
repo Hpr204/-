@@ -361,10 +361,10 @@
         <header>
             <h1>🎯 CS2 HUB</h1>
             <nav>
-                <!-- Убрали "Главная", добавили "Регистрация/Войти" с ссылкой -->
                 <a href="#" class="register-btn" onclick="window.location.href='https://hpr204.github.io/asdasdasd/'">Регистрация/Войти</a>
                 <a href="#">Новости</a>
-                <a href="#">Гайды</a>
+                <!-- Обновлённая ссылка на Гайды -->
+                <a href="#" onclick="window.location.href='https://hpr204.github.io/Gaidivcs2/'">Гайды</a>
                 <a href="#">Скины</a>
                 <a href="#">Турниры</a>
             </nav>
@@ -386,12 +386,12 @@
                 <p>Все последние обновления, патчи и события в мире CS2. Будьте в курсе!</p>
                 <a href="#" class="card-btn">Читать новости</a>
             </div>
-            <!-- Карточка "Гайды" -->
+            <!-- Карточка "Гайды" с ссылкой -->
             <div class="card">
                 <i class="fas fa-book-open"></i>
                 <h3>Гайды</h3>
                 <p>Обучение для новичков, тактики, советы по стрельбе и стратегии от профи.</p>
-                <a href="#" class="card-btn">Изучить гайды</a>
+                <a href="#" class="card-btn" onclick="window.location.href='https://hpr204.github.io/Gaidivcs2/'">Изучить гайды</a>
             </div>
             <!-- Карточка "Скины" -->
             <div class="card">
@@ -451,12 +451,29 @@
             window.location.href = 'https://hpr204.github.io/asdasdasd/';
         }
 
-        // Назначаем обработчики на все кнопки, которые должны вести на регистрацию
+        // Функция для перенаправления на сайт с гайдами
+        function goToGuides() {
+            window.location.href = 'https://hpr204.github.io/Gaidivcs2/';
+        }
+
+        // Назначаем обработчики на кнопки регистрации
         document.querySelectorAll('.register-btn, .hero .btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 goToRegistration();
             });
+        });
+
+        // Назначаем обработчик на кнопку "Гайды" в меню
+        document.querySelector('nav a[onclick*="Gaidivcs2"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            goToGuides();
+        });
+
+        // Назначаем обработчик на кнопку "Изучить гайды" в карточке
+        document.querySelector('.card .card-btn[onclick*="Gaidivcs2"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            goToGuides();
         });
     </script>
 </body>
